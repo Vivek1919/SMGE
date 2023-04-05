@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Decision_Activity"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/heading"
+        android:gravity="center"
+        android:text="Send Me Gas Engineer"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="595dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.428">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="256dp"
+        android:layout_height="103dp"
+        android:background="@drawable/orange_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView4"
+        app:layout_constraintVertical_bias="1.0">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="192dp"
+        android:layout_height="437dp"
+        android:background="@drawable/eng"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/imgbtn1"
+        android:layout_width="338dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/button"
+        android:backgroundTint="@color/orange"
+        android:clickable="true"
+        android:text="Send Me Gas Engineer"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/tx1"
+        android:layout_width="176dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="GAS EMERGENCY"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imgbtn1"
+        app:layout_constraintEnd_toEndOf="@id/imgbtn1"
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintStart_toStartOf="@id/imgbtn1"
+        app:layout_constraintTop_toTopOf="@id/imgbtn1"
+        app:layout_constraintVertical_bias="0.431" />
+
+    <ImageButton
+        android:id="@+id/imgbtn2"
+        android:layout_width="270dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/button"
+        android:backgroundTint="@color/orange"
+        android:clickable="true"
+        android:text="Send Me Gas Engineer"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgbtn1" />
+
+
+    <TextView
+        android:id="@+id/tx2"
+        android:layout_width="178dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="GAS APPLIANCE CHECK &amp;"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imgbtn2"
+        app:layout_constraintEnd_toEndOf="@id/imgbtn2"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toStartOf="@id/imgbtn2"
+        app:layout_constraintTop_toTopOf="@id/imgbtn2"
+        app:layout_constraintVertical_bias="0.268" />
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="142dp"
+        android:layout_height="27dp"
+        android:gravity="center"
+        android:text="REPAIR"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imgbtn2"
+        app:layout_constraintEnd_toEndOf="@id/imgbtn2"
+        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintStart_toStartOf="@id/imgbtn2"
+        app:layout_constraintTop_toTopOf="@id/imgbtn2"
+        app:layout_constraintVertical_bias="0.797" />
+
+    <ImageButton
+        android:id="@+id/imgbtn3"
+        android:layout_width="213dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/button"
+        android:backgroundTint="@color/orange"
+        android:clickable="true"
+        android:text="Send Me Gas Engineer"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgbtn2" />
+
+    <TextView
+        android:id="@+id/tx3"
+        android:layout_width="154dp"
+        android:layout_height="63dp"
+        android:gravity="center"
+        android:text="GAS APPLIANCE SERVICE"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imgbtn3"
+        app:layout_constraintEnd_toEndOf="@id/imgbtn3"
+        app:layout_constraintHorizontal_bias="0.271"
+        app:layout_constraintStart_toStartOf="@id/imgbtn3"
+        app:layout_constraintTop_toTopOf="@id/imgbtn3"
+        app:layout_constraintVertical_bias="0.333" />
+
+    <ImageButton
+        android:id="@+id/imgbtn4"
+        android:layout_width="168dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/button"
+        android:backgroundTint="@color/orange"
+        android:clickable="true"
+        android:text="Send Me Gas Engineer"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgbtn3" />
+
+
+    <Button
+        android:id="@+id/imgbtn5"
+        android:layout_width="242dp"
+        android:layout_height="71dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/orange"
+        android:text="chat with an engineer"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgbtn4"
+        app:layout_constraintVertical_bias="0.506" />
+
+    <TextView
+        android:id="@+id/tx5"
+        android:layout_width="139dp"
+        android:layout_height="31dp"
+        android:gravity="center"
+        android:text="CHECK STATUS"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imgbtn4"
+        app:layout_constraintEnd_toEndOf="@id/imgbtn4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/imgbtn4"
+        app:layout_constraintTop_toTopOf="@id/imgbtn4"
+        app:layout_constraintVertical_bias="0.441" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

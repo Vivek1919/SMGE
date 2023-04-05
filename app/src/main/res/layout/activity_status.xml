@@ -1,0 +1,123 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="57dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/heading"
+            android:gravity="center"
+            android:text="Status"
+            android:textColor="@color/white"
+            android:textSize="25sp">
+
+        </TextView>
+        <Button
+            android:id="@+id/refresh_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Refresh"
+            android:layout_marginRight="130dp"
+            android:layout_marginLeft="130dp"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            app:cornerRadius="5dp"
+            android:layout_marginBottom="40dp"/>
+
+
+        <TextView
+            android:id="@+id/headinggas_emergencies_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:drawableLeft="@drawable/baseline_local_gas_station_24"
+            android:gravity="center"
+            android:background="@color/light"
+            android:padding="16dp"
+            android:text="Gas Emergencies"
+            android:elevation="10dp"
+            android:textColor="@color/orange"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/gas_emergencies_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="16dp"
+            android:text="Gas Emergencies:"
+            android:textColor="@color/orange"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/headingrepair_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:drawableLeft="@drawable/baseline_home_repair_service_24"
+            android:background="@color/light"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="Repairs"
+            android:textColor="@color/orange"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/repair_text_view"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Repairs:"
+            android:textColor="@color/orange"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/headingservice_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/light"
+            android:elevation="10dp"
+            android:drawableLeft="@drawable/baseline_miscellaneous_services_24"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="Services"
+            android:textColor="@color/orange"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/service_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="16dp"
+            android:text="Services:"
+            android:textColor="@color/orange"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</ScrollView>

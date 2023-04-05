@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Booking.Check_and_repair_Activity"
+    android:background="@color/white">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout1012"
+        android:layout_width="match_parent"
+        android:layout_height="488dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textQuestion1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="320dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="Name"
+            android:inputType="text"
+            android:textColorHint="#FD7642"
+            app:boxStrokeWidth="1dp"
+            app:helperTextTextColor="@color/white"
+            app:hintTextColor="@color/orange"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/orange"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:gravity="top|left"
+                android:inputType="text"
+                android:paddingLeft="15dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="10dp"
+                android:singleLine="false"
+                android:textColor="#FD7642"
+                android:textColorHint="#FD7642"
+                android:textSize="16sp"
+                app:passwordToggleEnabled="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textQuestion2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="320dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="Address"
+            android:inputType="text"
+            android:textColorHint="#FD7642"
+            app:boxStrokeWidth="1dp"
+            app:helperTextTextColor="@color/white"
+            app:hintTextColor="@color/orange"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Address"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/orange"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:gravity="top|left"
+                android:inputType="text"
+                android:paddingLeft="15dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="10dp"
+                android:singleLine="false"
+                android:textColor="#FD7642"
+                android:textColorHint="#FD7642"
+                android:textSize="16sp"
+                app:passwordToggleEnabled="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textQuestion3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="320dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="Mobile No"
+            android:inputType="number"
+            android:textColorHint="#FD7642"
+            app:boxStrokeWidth="1dp"
+            app:helperTextTextColor="@color/white"
+            app:hintTextColor="@color/orange"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Mobile_No"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/orange"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:gravity="top|left"
+                android:inputType="number"
+                android:paddingLeft="15dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="10dp"
+                android:singleLine="false"
+                android:textColor="#FD7642"
+                android:textColorHint="#FD7642"
+                android:textSize="16sp"
+                app:passwordToggleEnabled="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textQuestion4"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="320dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="Date of appointment"
+            android:inputType="datetime"
+            android:textColorHint="#FD7642"
+            app:boxStrokeWidth="1dp"
+            app:helperTextTextColor="@color/white"
+            app:hintTextColor="@color/orange"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/dateButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#ffe5cc"
+                android:text="Select Date"
+                android:textColor="@color/orange"
+                android:textSize="12sp" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dateText"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:backgroundTint="@color/orange"
+                android:drawablePadding="10dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="10dp"
+                android:singleLine="true"
+                android:textColor="#FD7642"
+                android:textColorHint="#FD7642"
+                android:textSize="16sp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textQuestion5"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="320dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="Address"
+            android:inputType="text"
+            android:textColorHint="#FD7642"
+            app:boxStrokeWidth="1dp"
+            app:helperTextTextColor="@color/white"
+            app:hintTextColor="@color/orange"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:paddingLeft="15dp"
+                android:text="Select time Slot:"
+                android:textColor="@color/orange"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dropdown"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="#ffe5cc"
+                android:elevation="15dp"
+                android:hint="@string/select"
+                android:textAlignment="center"
+                android:textColorHint="@color/orange"
+                android:textStyle="bold"
+                app:boxCornerRadiusBottomEnd="50dp"
+                app:boxCornerRadiusBottomStart="50dp"
+                app:boxCornerRadiusTopEnd="50dp"
+                app:boxCornerRadiusTopStart="50dp"
+                app:boxStrokeColor="@color/orange">
+
+                <AutoCompleteTextView
+                    android:id="@+id/Timeslot"
+                    android:layout_width="295dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:background="#ffe5cc"
+                    android:inputType="none"
+                    android:paddingRight="25dp"
+                    android:textColor="@color/orange"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textQuestion6"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="320dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="Address"
+            android:inputType="text"
+            android:textColorHint="#FD7642"
+            app:boxStrokeWidth="1dp"
+            app:helperTextTextColor="@color/white"
+            app:hintTextColor="@color/orange"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:text="Select Gas Appliance:"
+                android:textColor="@color/orange"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dropdown2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="#ffe5cc"
+                android:elevation="15dp"
+                android:hint="@string/select"
+                android:textAlignment="center"
+                android:textColorHint="@color/orange"
+                android:textStyle="bold"
+                app:boxCornerRadiusBottomEnd="50dp"
+                app:boxCornerRadiusBottomStart="50dp"
+                app:boxCornerRadiusTopEnd="50dp"
+                app:boxCornerRadiusTopStart="50dp"
+                app:boxStrokeColor="@color/orange">
+
+                <AutoCompleteTextView
+                    android:id="@+id/Appliance"
+                    android:layout_width="295dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:background="#ffe5cc"
+                    android:inputType="none"
+                    android:paddingRight="25dp"
+                    android:textColor="@color/orange"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="10dp"
+            android:layout_height="10dp">
+
+        </TextView>
+
+    </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="354dp"
+            android:layout_height="58dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/heading"
+            android:gravity="center"
+            android:shadowColor="@color/black"
+            android:text="Send Me Gas Engineer"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Submitbutton"
+        android:layout_width="150dp"
+        android:layout_height="58dp"
+        android:backgroundTint="@color/orange"
+        android:elevation="10dp"
+        android:text="Submit"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1012"
+        app:layout_constraintVertical_bias="0.411"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Gas Appliance Check &amp; Repair"
+        android:textAlignment="center"
+        android:textColor="@color/orange"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

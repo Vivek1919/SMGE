@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Confirmation.Safety_Advice_Activity"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/linearLayout1012"
+        android:layout_width="407dp"
+        android:layout_height="475dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <TextView
+            android:id="@+id/referenceNumberTextView"
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:background="@color/light"
+            android:gravity="center"
+            android:text="text"
+            android:textAlignment="center"
+            android:textColor="@color/orange"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="370dp"
+            android:layout_height="70dp"
+            android:paddingLeft="20dp"
+            android:text="Safety Advice for gas leak or smell of Gas:"
+            android:textColor="@color/orange"
+            android:layout_marginTop="10dp"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="63dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:text="a."
+                android:textAlignment="center"
+                android:textColor="@color/orange"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="59dp"
+                android:layout_marginRight="25dp"
+                android:text="Open doors and windows to ventilate the property"
+                android:textColor="@color/orange"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="63dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:text="b."
+                android:textAlignment="center"
+                android:textColor="@color/orange"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="59dp"
+                android:layout_marginRight="25dp"
+                android:text="Do not operate any electrical appliances or switches in any way"
+                android:textColor="@color/orange"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="63dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:text="c."
+                android:textAlignment="center"
+                android:textColor="@color/orange"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="59dp"
+                android:layout_marginRight="25dp"
+                android:text="Do not smoke or avoid anything that could be a possible source of ignition"
+                android:textColor="@color/orange"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="63dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:text="d."
+                android:textAlignment="center"
+                android:textColor="@color/orange"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_marginRight="25dp"
+                android:text="Do not enter basement, cellar, attic or loft"
+                android:textColor="@color/orange"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="63dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:text="e."
+                android:textAlignment="center"
+                android:textColor="@color/orange"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_marginRight="25dp"
+                android:text="Call us on 0800-111-999 to update about the situation"
+                android:textColor="@color/orange"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/heading"
+        android:gravity="center"
+        android:text="Send Me Gas Engineer"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ChatwithanEngineer"
+        android:layout_width="270dp"
+        android:layout_height="58dp"
+        android:backgroundTint="@color/orange"
+        android:elevation="10dp"
+        android:text="Chat with an engineer?"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1012"
+        app:layout_constraintVertical_bias="0.411"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="356dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:text="Thanks for reporting emergency, engineer will be there within 1Hr"
+        android:textAlignment="center"
+        android:textColor="@color/orange"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.smge">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo"
+        android:label="S M G E"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SMGE"
+        tools:targetApi="31">
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Admin.AdminChat"
+            android:exported="false" />
+        <activity
+            android:name=".Chat.Chat_with_an_engineer"
+            android:exported="false" />
+        <activity
+            android:name=".Search_and_Status"
+            android:exported="false" />
+        <activity
+            android:name=".Service_Jobs"
+            android:exported="false" />
+        <activity
+            android:name=".Repair_Jobs"
+            android:exported="false" />
+        <activity
+            android:name=".Gas_Emergency_Jobs"
+            android:exported="false" />
+        <activity
+            android:name=".Customer_Details_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.Admin_Control_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Status_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Login.Splash_Screen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Confirmation.Service_Confirmation_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Confirmation.Confirmation_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Confirmation.Safety_Advice_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Booking.Service_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Booking.Check_and_repair_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Booking.Gas_Emergency_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Decision_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Login.Sign_in_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Login.Register_Activity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Login.Main_Activity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+    </application>
+
+</manifest>

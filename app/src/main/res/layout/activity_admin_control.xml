@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Admin.Admin_Control_Activity"
+    android:background="@color/white">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="354dp"
+            android:layout_height="58dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/heading"
+            android:gravity="center"
+            android:shadowColor="@color/black"
+            android:text="Send Me Gas Engineer"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/Customer_Details"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="70dp"
+            android:backgroundTint="@color/light"
+            android:text="Customer Details"
+            android:textColor="@color/orange"
+            android:textSize="15dp"
+            app:cornerRadius="05dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <Button
+            android:id="@+id/Gas_Emergency_Jobs"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="70dp"
+            android:backgroundTint="@color/light"
+            android:text="Gas Emergency jobs"
+            android:textColor="@color/orange"
+            android:textSize="15dp"
+            app:cornerRadius="05dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Customer_Details" />
+
+        <Button
+            android:id="@+id/Repair_Jobs"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="70dp"
+            android:backgroundTint="@color/light"
+            android:text="Repair jobs"
+            android:textColor="@color/orange"
+            android:textSize="15dp"
+            app:cornerRadius="05dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Gas_Emergency_Jobs" />
+
+
+        <Button
+            android:id="@+id/service_Jobs"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="70dp"
+            android:backgroundTint="@color/light"
+            android:text="Service jobs"
+            android:textColor="@color/orange"
+            android:textSize="15dp"
+            app:cornerRadius="05dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Repair_Jobs" />
+
+        <Button
+            android:id="@+id/Search_and_Status"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="70dp"
+            android:backgroundTint="@color/light"
+            android:text="Search and status"
+            android:textColor="@color/orange"
+            android:textSize="15dp"
+            app:cornerRadius="05dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/service_Jobs" />
+
+        <Button
+            android:id="@+id/Admin_chat"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="70dp"
+            android:backgroundTint="@color/light"
+            android:text="Admin Chat"
+            android:textColor="@color/orange"
+            android:textSize="15dp"
+            app:cornerRadius="05dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Search_and_Status" />
+
+        <Button
+            android:id="@+id/Logout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="120dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/orange"
+            android:text="Logout"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            app:cornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Admin_chat"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

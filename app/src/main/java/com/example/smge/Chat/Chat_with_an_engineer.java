@@ -54,6 +54,7 @@ public class Chat_with_an_engineer extends AppCompatActivity {
         chatRecyclerView.setLayoutManager(layoutManager);
         chatRecyclerView.setAdapter(chatAdapter);
 
+
         // Get the receiver ID
         receiver = "admin@gmail.com";
 

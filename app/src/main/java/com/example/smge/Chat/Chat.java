@@ -7,11 +7,14 @@ public class Chat {
     private String receiverEmail;
     private long timestamp;
 
+    private boolean isSeen;
+
     public Chat() {
         // Empty constructor needed for Firebase
     }
 
     public Chat(String message, String senderUid, String senderEmail, String receiverEmail, long timestamp) {
+
         this.message = message;
         this.senderUid = senderUid;
         this.senderEmail = senderEmail;
@@ -57,6 +60,14 @@ public class Chat {
 
     public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public boolean isSeen() {
+        return isSeen;
+    }
+
+    public void setSeen(boolean isSeen) {
+        this.isSeen = isSeen;
     }
 
     @Override

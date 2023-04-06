@@ -44,9 +44,11 @@ public class AdminChat extends AppCompatActivity {
         senderChats = new ArrayList<>();
         chatListAdapter = new ChatListAdapter(senderChats);
 
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         chatRecyclerView.setLayoutManager(layoutManager);
         chatRecyclerView.setAdapter(chatListAdapter);
+
 
         // Set the reference to the chats node
         chatsRef = firebaseDatabase.getReference("chats");
@@ -67,6 +69,7 @@ public class AdminChat extends AppCompatActivity {
                 // Do something with uniqueSenderEmails set
                 senderChats = new ArrayList<>();
                 senderChats.addAll(senders);
+                senderChats.remove("admin@gmail.com");
                 chatListAdapter.notifyDataSetChanged();
             }
 

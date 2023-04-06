@@ -1,7 +1,6 @@
 package com.example.smge;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.smge.Chat.Chat;
 import com.example.smge.Chat.ChatAdapter;
@@ -24,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.annotations.Nullable;
 
 
 import java.util.ArrayList;
@@ -31,17 +32,19 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 public class ChatActivity extends AppCompatActivity {
 
     private EditText messageEditText;
+
+    private TextView sendTo;
     private Button sendButton;
     private RecyclerView chatRecyclerView;
     private ChatAdapter chatAdapter;
     private List<Chat> chatList = new ArrayList<>();
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-    private FirebaseUser currentUser = firebaseAuth.getCurrentUser();
     private String receiver;
     private DatabaseReference chatsRef;
 
@@ -50,6 +53,7 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
+        sendTo = findViewById(R.id.sendTo);
         messageEditText = findViewById(R.id.messageEditText);
         sendButton = findViewById(R.id.sendButton);
         chatRecyclerView = findViewById(R.id.chatRecyclerView);
@@ -57,44 +61,30 @@ public class ChatActivity extends AppCompatActivity {
         // Get the receiver ID
         receiver = getIntent().getStringExtra("receiverEmail");
 
-        // Set the reference to the chats node
-        chatsRef = firebaseDatabase.getReference("chats");
 
+        // Set the reference to the chats node
         // Query Realtime Database for all chats between the user and the admin
-        chatsRef.orderByChild("sender_receiver")
-                .startAt(currentUser.getUid() + "_" + receiver)
-                .endAt(receiver + "_" + currentUser.getUid())
-                .addChildEventListener(new ChildEventListener() {
-                    @Override
-                    public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                        Chat chat = snapshot.getValue(Chat.class);
+        chatsRef = firebaseDatabase.getReference("chats");
+        chatsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                chatList = new ArrayList<>();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Chat chat = snapshot.getValue(Chat.class);
+                    if (chat.getSenderEmail().equals(receiver) || chat.getReceiverEmail().equals(receiver)) {
+                        // Only add the message to the list if it's sent by the signed-in user or the admin
                         chatList.add(chat);
                         chatAdapter.notifyDataSetChanged();
-                        chatRecyclerView.scrollToPosition(chatList.size() - 1);
-                        Log.d("Chatwithanengineer", "Chat added: " + chat.toString());
                     }
+                }
+                System.out.println(chatList.size());
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-                    @Override
-                    public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                        // Do nothing
-                    }
-
-                    @Override
-                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-                        // Do nothing
-                    }
-
-                    @Override
-                    public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                        // Do nothing
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Log.w("Chatwithanengineer", "Listen failed.", error.toException());
-                    }
-                });
+            }
+        });
 
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,7 +94,7 @@ public class ChatActivity extends AppCompatActivity {
                 if (!TextUtils.isEmpty(message)) {
                     // Store in Realtime Database
                     String key = chatsRef.push().getKey();
-                    Chat chat = new Chat(message, currentUser.getUid(), currentUser.getEmail(), receiver, new Date().getTime());
+                    Chat chat = new Chat(message, UUID.randomUUID().toString(),"admin@gmail.com", receiver, new Date().getTime());
                     chatsRef.child(key).setValue(chat);
                     Log.d("ChatActivity", "Chat sent: " + chat);
 
@@ -117,7 +107,6 @@ public class ChatActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         chatRecyclerView.setLayoutManager(layoutManager);
         chatRecyclerView.setAdapter(chatAdapter);
-
     }
 }
 

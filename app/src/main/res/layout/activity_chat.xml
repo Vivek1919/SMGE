@@ -37,11 +37,12 @@
         android:layout_height="44dp">
 
         <TextView
+            android:id="@+id/sendTo"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@color/light_gray"
             android:gravity="center"
-            android:text="User"
+            android:text="user"
             android:textAlignment="center"
             android:textColor="@color/orange"
             android:textSize="22dp"

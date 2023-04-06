@@ -22,6 +22,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -55,9 +56,8 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatVi
                 // Do something with uniqueSenderEmails set
                 uniqueSenderEmails = new ArrayList<>();
                 uniqueSenderEmails.addAll(senders);
+                uniqueSenderEmails.remove("admin@gmail.com");
                 notifyDataSetChanged();
-
-
             }
 
             @Override
@@ -88,6 +88,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatVi
         holder.lastMessageTextView.setText(mostRecentMessage);
     }
 
+
     @Override
     public int getItemCount() {
         return uniqueSenderEmails.size();
@@ -98,16 +99,15 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatVi
         public TextView lastMessageTextView;
         private OnItemClickListener onItemClickListener;
 
-        public TextView unseenCountTextView;
-
         public ChatViewHolder(@NonNull View itemView, OnItemClickListener onItemClickListener) {
             super(itemView);
             this.onItemClickListener = onItemClickListener;
             itemView.setOnClickListener(this);
             senderEmailTextView = itemView.findViewById(R.id.senderEmailTextView);
             lastMessageTextView = itemView.findViewById(R.id.lastMessageTextView);
-            unseenCountTextView = itemView.findViewById(R.id.unseenCountTextView);
+
         }
+
         @Override
         public void onClick(View v) {
             if (onItemClickListener != null) {

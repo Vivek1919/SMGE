@@ -39,7 +39,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Chat chat = dataSnapshot.getValue(Chat.class);
-                if (chat.getSenderEmail().equals(currentUserEmail) || chat.getSenderEmail().equals("admin")) {
+                if (chat.getSenderEmail().equals(currentUserEmail) || chat.getSenderEmail().equals("admin@gmail.com")) {
                     // Only add the message to the list if it's sent by the signed-in user or the admin
                     chatList.add(chat);
                     notifyDataSetChanged();
@@ -124,7 +124,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
 
             // Set gravity and background color based on whether the message is sent by the current user or not
             int backgroundColor, gravity;
-            if (chat.getSenderEmail().equals(currentUserEmail)) {
+            if (chat.getSenderEmail().equals(chat.getSenderEmail())) {
                 backgroundColor = ContextCompat.getColor(itemView.getContext(), R.color.colorPrimaryLight);
                 gravity = Gravity.END;
             } else {
@@ -135,10 +135,9 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
             ((LinearLayout)itemView).setGravity(gravity);
         }
 
-
         // Helper method to format the timestamp into a readable date and time string
         private String formatDate(long timestamp) {
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault());
             sdf.setTimeZone(TimeZone.getDefault());
             return sdf.format(new Date(timestamp));
         }

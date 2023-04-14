@@ -24,7 +24,6 @@ import java.util.Locale;
 import java.util.TimeZone;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
-
     private List<Chat> chatList;
     private String currentUserEmail;
     private DatabaseReference mDatabase;
@@ -33,14 +32,13 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
         this.chatList = chatList;
         this.currentUserEmail = currentUserEmail;
 
-
         mDatabase = FirebaseDatabase.getInstance().getReference().child("chats");
         mDatabase.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Chat chat = dataSnapshot.getValue(Chat.class);
-                if (chat.getSenderEmail().equals(currentUserEmail) || chat.getSenderEmail().equals("admin@gmail.com")) {
-                    // Only add the message to the list if it's sent by the signed-in user or the admin
+                if (chat.getSenderEmail().equals(currentUserEmail) || chat.getReceiverEmail().equals(currentUserEmail)) {
+                    // Only add the message to the list if it's sent by or to the signed-in user
                     chatList.add(chat);
                     notifyDataSetChanged();
                 }
@@ -97,7 +95,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Chat chat = chatList.get(position);
-        holder.bind(chat);
+        holder.bind(chat, currentUserEmail);
     }
 
     @Override
@@ -105,44 +103,48 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
         return chatList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView messageTextView;
-        private TextView senderTextView;
-        private TextView dateTextView;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            messageTextView = itemView.findViewById(R.id.messageTextView);
-            senderTextView = itemView.findViewById(R.id.senderTextView);
-            dateTextView = itemView.findViewById(R.id.timeTextView);
-        }
+        public class ViewHolder extends RecyclerView.ViewHolder {
+            private TextView messageTextView;
+            private TextView senderTextView;
+            private TextView dateTextView;
+            private LinearLayout messageLayout;
 
-        public void bind(Chat chat) {
-            messageTextView.setText(chat.getMessage());
-            senderTextView.setText(chat.getSenderEmail());
-            dateTextView.setText(formatDate(chat.getTimestamp()));
-
-            // Set gravity and background color based on whether the message
-            int backgroundColor, gravity;
-            if (chat.getSenderEmail().equals(chat.getSenderEmail())) {
-                backgroundColor = ContextCompat.getColor(itemView.getContext(), R.color.colorPrimaryLight);
-                gravity = Gravity.END;
-            } else {
-                backgroundColor = Color.BLACK;
-                gravity = Gravity.START;
+            public ViewHolder(@NonNull View itemView) {
+                super(itemView);
+                messageTextView = itemView.findViewById(R.id.messageTextView);
+                senderTextView = itemView.findViewById(R.id.senderTextView);
+                dateTextView = itemView.findViewById(R.id.timeTextView);
+                messageLayout = itemView.findViewById(R.id.messageLayout);
             }
-            itemView.setBackgroundColor(backgroundColor);
-            ((LinearLayout)itemView).setGravity(gravity);
+
+            public void bind(Chat chat, String currentUserEmail) {
+                messageTextView.setText(chat.getMessage());
+                senderTextView.setText(chat.getSenderEmail());
+                dateTextView.setText(formatDate(chat.getTimestamp()));
+
+                // Set gravity and background color based on whether the message is sent by the current user or not
+                int backgroundColor, gravity;
+                if (chat.getSenderEmail().equals(currentUserEmail)) {
+                    backgroundColor = ContextCompat.getColor(itemView.getContext(), R.color.colorPrimaryLight);
+                    gravity = Gravity.END;
+                } else {
+                    backgroundColor = Color.WHITE;
+                    gravity = Gravity.START;
+                }
+                messageLayout.setBackgroundColor(backgroundColor);
+                ((LinearLayout) messageLayout).setGravity(gravity);
+            }
+
+            // Helper method to format the timestamp into a readable date and time string
+            private String formatDate(long timestamp) {
+                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault());
+                sdf.setTimeZone(TimeZone.getDefault());
+                return sdf.format(new Date(timestamp));
+            }
         }
 
-        // Helper method to format the timestamp into a readable date and time string
-        private String formatDate(long timestamp) {
-            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault());
-            sdf.setTimeZone(TimeZone.getDefault());
-            return sdf.format(new Date(timestamp));
-        }
     }
-}
 
 
 

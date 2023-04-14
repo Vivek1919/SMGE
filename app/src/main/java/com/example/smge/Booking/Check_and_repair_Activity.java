@@ -63,7 +63,7 @@ public class Check_and_repair_Activity extends AppCompatActivity {
 
 
         timeslot = findViewById(R.id.Timeslot);
-        adapterItems = new ArrayAdapter<String>(this, R.layout.chat_adapter_layout, time);
+        adapterItems = new ArrayAdapter<String>(this, R.layout.list_item, time);
         timeslot.setAdapter(adapterItems);
 
         dateText = findViewById(R.id.dateText);
@@ -72,7 +72,7 @@ public class Check_and_repair_Activity extends AppCompatActivity {
         bt1 = findViewById(R.id.Submitbutton);
 
         appliance = findViewById(R.id.Appliance);
-        adapterItems = new ArrayAdapter<String>(this, R.layout.chat_adapter_layout, appliances);
+        adapterItems = new ArrayAdapter<String>(this, R.layout.list_item, appliances);
         appliance.setAdapter(adapterItems);
 
 

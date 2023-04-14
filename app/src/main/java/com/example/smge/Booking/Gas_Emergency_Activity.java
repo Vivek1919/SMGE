@@ -59,7 +59,7 @@ public class Gas_Emergency_Activity extends AppCompatActivity {
 
 
         autoCompleteTextView = findViewById(R.id.auto_complete_txt);
-        adapterItems = new ArrayAdapter<String>(this, R.layout.chat_adapter_layout, item);
+        adapterItems = new ArrayAdapter<String>(this, R.layout.list_item, item);
         bt1 = findViewById(R.id.Submitbutton);
 
         autoCompleteTextView.setAdapter(adapterItems);

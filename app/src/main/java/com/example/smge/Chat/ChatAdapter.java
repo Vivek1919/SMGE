@@ -122,13 +122,13 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
             senderTextView.setText(chat.getSenderEmail());
             dateTextView.setText(formatDate(chat.getTimestamp()));
 
-            // Set gravity and background color based on whether the message is sent by the current user or not
+            // Set gravity and background color based on whether the message
             int backgroundColor, gravity;
             if (chat.getSenderEmail().equals(chat.getSenderEmail())) {
                 backgroundColor = ContextCompat.getColor(itemView.getContext(), R.color.colorPrimaryLight);
                 gravity = Gravity.END;
             } else {
-                backgroundColor = Color.WHITE;
+                backgroundColor = Color.BLACK;
                 gravity = Gravity.START;
             }
             itemView.setBackgroundColor(backgroundColor);

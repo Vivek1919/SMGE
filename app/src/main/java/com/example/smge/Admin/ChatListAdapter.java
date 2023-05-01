@@ -35,7 +35,7 @@ import java.util.stream.Collectors;
         public interface OnItemClickListener {
             void onItemClick(int position);
         }
-
+ 
         public ChatListAdapter(List<String> chatList) {
             this.uniqueSenderEmails = chatList;
 

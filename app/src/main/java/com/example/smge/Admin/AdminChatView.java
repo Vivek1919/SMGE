@@ -69,6 +69,7 @@ public class AdminChatView extends AppCompatActivity {
                 chatListAdapter.notifyDataSetChanged();
             }
 
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 // Handle errors here

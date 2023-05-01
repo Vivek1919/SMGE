@@ -103,6 +103,7 @@ public class Chat_to_user_adapter extends RecyclerView.Adapter<Chat_to_user_adap
         return new ViewHolder(view);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Chat chat = chatList.get(position);

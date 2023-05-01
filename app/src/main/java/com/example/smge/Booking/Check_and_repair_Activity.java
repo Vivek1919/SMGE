@@ -104,9 +104,50 @@ public class Check_and_repair_Activity extends AppCompatActivity {
                 String uid = auth.getCurrentUser().getUid();
 
 
-                // Check if any of the text fields are empty
-                if (nameStr.isEmpty() || addressStr.isEmpty() || mobileNoStr.isEmpty() || dateTextStr.isEmpty() || timeslotStr.isEmpty() || applianceStr.isEmpty()) {
-                    Toast.makeText(Check_and_repair_Activity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                // Validate the name field
+                if (nameStr.isEmpty()) {
+                    name.setError("Please enter your name");
+                    name.requestFocus();
+                    return;
+                }
+
+                // Validate the address field
+                if (addressStr.isEmpty()) {
+                    address.setError("Please enter your address");
+                    address.requestFocus();
+                    return;
+                }
+
+                // Validate the mobile number field
+                if (mobileNoStr.isEmpty()) {
+                    mobile_no.setError("Please enter your mobile number");
+                    mobile_no.requestFocus();
+                    return;
+                }
+                if (mobileNoStr.length() != 11) {
+                    mobile_no.setError("Please enter a valid 10-digit mobile number \"start with 0\"");
+                    mobile_no.requestFocus();
+                    return;
+                }
+
+                // Validate the date field
+                if (dateTextStr.isEmpty()) {
+                    dateText.setError("Please enter a date");
+                    dateText.requestFocus();
+                    return;
+                }
+
+                // Validate the timeslot field
+                if (timeslotStr.isEmpty()) {
+                    timeslot.setError("Please enter a timeslot");
+                    timeslot.requestFocus();
+                    return;
+                }
+
+                // Validate the appliance field
+                if (applianceStr.isEmpty()) {
+                    appliance.setError("Please enter the appliance to be repaired");
+                    appliance.requestFocus();
                     return;
                 }
 

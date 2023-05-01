@@ -48,8 +48,7 @@ public class Chat_with_an_engineer extends AppCompatActivity {
         sendButton = findViewById(R.id.sendButton);
         chatRecyclerView = findViewById(R.id.chatRecyclerView);
 
-        chatAdapter = new ChatAdapter(chatList, currentUser.getEmail());
-
+        chatAdapter = new ChatAdapter(chatList, currentUser.getEmail(), chatRecyclerView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         chatRecyclerView.setLayoutManager(layoutManager);
         chatRecyclerView.setAdapter(chatAdapter);
@@ -69,7 +68,6 @@ public class Chat_with_an_engineer extends AppCompatActivity {
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                         Chat chat = snapshot.getValue(Chat.class);
-                        chatList.add(chat);
                         chatAdapter.notifyDataSetChanged();
                         chatRecyclerView.scrollToPosition(chatList.size() - 1);
                         Log.d("Chatwithanengineer", "Chat added: " + chat.toString());
@@ -110,8 +108,13 @@ public class Chat_with_an_engineer extends AppCompatActivity {
                     Log.d("Chatwithanengineer", "Chat sent: " + chat);
 
                     messageEditText.setText("");
+
+                    // Notify adapter and scroll to bottom of RecyclerView
+                    chatAdapter.notifyDataSetChanged();
+                    chatRecyclerView.scrollToPosition(chatList.size() - 1);
                 }
             }
         });
+
     }
 }

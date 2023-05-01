@@ -73,7 +73,7 @@ public class Admin_Control_Activity extends AppCompatActivity {
         adminchat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Admin_Control_Activity.this, AdminChat.class));
+                startActivity(new Intent(Admin_Control_Activity.this, AdminChatView.class));
             }
         });
 

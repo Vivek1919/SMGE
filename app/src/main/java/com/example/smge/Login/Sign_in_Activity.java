@@ -1,6 +1,7 @@
 package com.example.smge.Login;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -52,13 +53,13 @@ public class Sign_in_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-        submit = (Button) findViewById(R.id.Signinbutton);
-        emailText = (TextView) findViewById(R.id.Email);
-        passwordText = (TextView) findViewById(R.id.Password);
-        text2 = (TextView) findViewById(R.id.txt2);
+        submit = findViewById(R.id.Signinbutton);
+        emailText = findViewById(R.id.Email);
+        passwordText = findViewById(R.id.Password);
+        text2 = findViewById(R.id.txt2);
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
-        googleSignInBtn = (ImageButton) findViewById(R.id.google_sign_in_button);
+        googleSignInBtn = findViewById(R.id.google_sign_in_button);
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -136,8 +137,7 @@ public class Sign_in_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //TO BE REMOVED
-                Intent intent = new Intent(Sign_in_Activity.this, Admin_Control_Activity.class);
-                Toast.makeText(Sign_in_Activity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Sign_in_Activity.this, Register_Activity.class);
                 startActivity(intent);
                 finish();
             }
@@ -152,12 +152,19 @@ public class Sign_in_Activity extends AppCompatActivity {
     }
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
+        // Show progress bar while signing in
+        ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Signing in...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
+
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         auth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @SuppressLint("RestrictedApi")
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        progressDialog.dismiss(); // Dismiss progress bar when sign-in is complete
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = auth.getCurrentUser();
@@ -184,6 +191,7 @@ public class Sign_in_Activity extends AppCompatActivity {
                     }
                 });
     }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

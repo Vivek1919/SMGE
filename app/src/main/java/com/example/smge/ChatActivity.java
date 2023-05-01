@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.smge.Admin.Chat_to_user_adapter;
 import com.example.smge.Chat.Chat;
 import com.example.smge.Chat.ChatAdapter;
 import com.google.firebase.auth.FirebaseAuth;
@@ -37,11 +38,10 @@ import java.util.UUID;
 public class ChatActivity extends AppCompatActivity {
 
     private EditText messageEditText;
-
     private TextView sendTo;
     private Button sendButton;
     private RecyclerView chatRecyclerView;
-    private ChatAdapter chatAdapter;
+    private Chat_to_user_adapter chatAdapter;
     private List<Chat> chatList = new ArrayList<>();
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -57,10 +57,16 @@ public class ChatActivity extends AppCompatActivity {
         messageEditText = findViewById(R.id.messageEditText);
         sendButton = findViewById(R.id.sendButton);
         chatRecyclerView = findViewById(R.id.chatRecyclerView);
+        // Pass the current user's email to the adapter
+        chatAdapter = new Chat_to_user_adapter(chatList, firebaseAuth.getCurrentUser().getEmail());
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        chatRecyclerView.setLayoutManager(layoutManager);
+        chatRecyclerView.setAdapter(chatAdapter);
 
         // Get the receiver ID
         receiver = getIntent().getStringExtra("receiverEmail");
 
+        sendTo.setText(receiver);
 
         // Set the reference to the chats node
         // Query Realtime Database for all chats between the user and the admin
@@ -68,16 +74,16 @@ public class ChatActivity extends AppCompatActivity {
         chatsRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                chatList = new ArrayList<>();
+                chatList.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Chat chat = snapshot.getValue(Chat.class);
                     if (chat.getSenderEmail().equals(receiver) || chat.getReceiverEmail().equals(receiver)) {
                         // Only add the message to the list if it's sent by the signed-in user or the admin
                         chatList.add(chat);
-                        chatAdapter.notifyDataSetChanged();
                     }
                 }
-                System.out.println(chatList.size());
+                chatAdapter.notifyDataSetChanged();
+                chatRecyclerView.scrollToPosition(chatList.size() - 1);
             }
 
             @Override
@@ -85,6 +91,8 @@ public class ChatActivity extends AppCompatActivity {
 
             }
         });
+
+
 
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,15 +106,15 @@ public class ChatActivity extends AppCompatActivity {
                     chatsRef.child(key).setValue(chat);
                     Log.d("ChatActivity", "Chat sent: " + chat);
 
+                    // Add the new chat message to the list and notify the adapter of the change
+                    chatList.add(chat);
+                    chatAdapter.notifyItemInserted(chatList.size() - 1);
+
                     messageEditText.setText("");
+                    chatRecyclerView.scrollToPosition(chatList.size() - 1);
                 }
             }
         });
 
-        chatAdapter = new ChatAdapter(chatList, receiver);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        chatRecyclerView.setLayoutManager(layoutManager);
-        chatRecyclerView.setAdapter(chatAdapter);
     }
 }
-

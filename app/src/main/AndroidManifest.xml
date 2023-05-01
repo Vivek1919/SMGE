@@ -25,7 +25,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".Admin.AdminChat"
+            android:name=".Admin.AdminChatView"
             android:exported="false" />
         <activity
             android:name=".Chat.Chat_with_an_engineer"

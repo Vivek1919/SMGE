@@ -84,14 +84,26 @@ public class Gas_Emergency_Activity extends AppCompatActivity {
                 String uid = auth.getCurrentUser().getUid();
 
                 // Check if any of the text fields are empty
-                if (nameStr.isEmpty() || addressStr.isEmpty() || mobileNoStr.isEmpty() || selectedItemStr.isEmpty()) {
-                    Toast.makeText(Gas_Emergency_Activity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                if (nameStr.isEmpty()) {
+                    name.setError("Please enter your name");
+                    return;
+                }
+                if (addressStr.isEmpty()) {
+                    address.setError("Please enter your address");
+                    return;
+                }
+                if (mobileNoStr.isEmpty()) {
+                    mobile_no.setError("Please enter your mobile number");
+                    return;
+                }
+                if (selectedItemStr.isEmpty()) {
+                    autoCompleteTextView.setError("Please select an item from the list");
                     return;
                 }
 
                 // Check if the user has selected a radio button
                 if (!radioButton1Checked && !radioButton2Checked && !radioButton3Checked) {
-                    Toast.makeText(Gas_Emergency_Activity.this, "Please select one of the option", Toast.LENGTH_SHORT).show();
+                    n_a.setError("Please select one of the options");
                     return;
                 }
 

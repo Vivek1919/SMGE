@@ -31,7 +31,7 @@
     android:layout_height="wrap_content"
     android:hint="Enter reference number"
     android:layout_marginTop="35dp"
-    android:inputType="text"
+    android:inputType="number"
     android:maxLength="10"
     android:maxLines="1"
     android:singleLine="true"

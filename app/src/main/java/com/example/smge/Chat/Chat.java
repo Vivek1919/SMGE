@@ -7,6 +7,8 @@ public class Chat {
     private String receiverEmail;
     private long timestamp;
 
+    private String last_message; // Add this field
+
     private boolean isSeen;
 
     public Chat() {
@@ -69,6 +71,7 @@ public class Chat {
     public void setSeen(boolean isSeen) {
         this.isSeen = isSeen;
     }
+
 
     @Override
     public String toString() {

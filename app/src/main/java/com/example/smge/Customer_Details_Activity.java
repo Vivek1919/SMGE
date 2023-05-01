@@ -66,7 +66,7 @@ public class Customer_Details_Activity extends AppCompatActivity {
     private void retrieveCustomerDetails() {
         String email = emailEditText.getText().toString();
         db.collection("users2")
-                .whereEqualTo("emailNo", email)
+                .whereEqualTo("email", email)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override

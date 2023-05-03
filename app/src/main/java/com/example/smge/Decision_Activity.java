@@ -32,6 +32,7 @@ public class Decision_Activity extends AppCompatActivity {
         bt5 = findViewById(R.id.imgbtn5);
 
 
+        //Takes user to Gas Emergency Page
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,6 +40,7 @@ public class Decision_Activity extends AppCompatActivity {
             }
         });
 
+        //Takes user to Check and Repair Page
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,6 +48,7 @@ public class Decision_Activity extends AppCompatActivity {
             }
         });
 
+        //Takes user to Service Page
         bt3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,6 +56,7 @@ public class Decision_Activity extends AppCompatActivity {
             }
         });
 
+        //Takes user to Status Page
         bt4.setOnClickListener(new View.OnClickListener() {
            @Override
             public void onClick(View view) {
@@ -60,6 +64,7 @@ public class Decision_Activity extends AppCompatActivity {
             }
         });
 
+        //Takes user to Chat with an Engineer Page
         bt5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,6 +74,7 @@ public class Decision_Activity extends AppCompatActivity {
     }
 
 
+    //Show the dialog message when user press back button
     @Override
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

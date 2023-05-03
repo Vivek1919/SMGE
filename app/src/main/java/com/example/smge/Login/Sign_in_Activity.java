@@ -80,6 +80,7 @@ public class Sign_in_Activity extends AppCompatActivity {
         });
 
 
+        //Check the user details and take them to the next page
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -133,6 +134,7 @@ public class Sign_in_Activity extends AppCompatActivity {
 
         });
 
+        //This is a text called "Register" that will take user to another activity
         text2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

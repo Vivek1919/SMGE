@@ -18,9 +18,10 @@ public class Main_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bt1 = (Button)findViewById(R.id.LoginButton);
-        bt2 = (Button)findViewById(R.id.Registerbutton);
+        bt1 = findViewById(R.id.LoginButton);
+        bt2 = findViewById(R.id.Registerbutton);
 
+        //This button will take user to sign in page
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -29,6 +30,7 @@ public class Main_Activity extends AppCompatActivity {
             }
         });
 
+        //This button will take user to Register page
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,6 +39,8 @@ public class Main_Activity extends AppCompatActivity {
             }
         });
     }
+
+    //When user click on back button, it shows this dialog box
     @Override
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
